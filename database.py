@@ -4,6 +4,7 @@ Using Python to create a SQLite3 Database
 
 import sqlite3
 
+# Some variables
 DATABSE_NAME = "database.db"
 conn = sqlite3.connect(DATABSE_NAME)
 cur = conn.cursor()
