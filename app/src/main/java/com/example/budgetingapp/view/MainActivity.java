@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity1);
+        getSupportActionBar().hide();
         Button expandButton = (Button) findViewById(R.id.expandButton);
         expandButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

@@ -15,6 +15,7 @@ public class Activity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity3);
+        getSupportActionBar().hide();
         Button removeButton = (Button) findViewById(R.id.doneButton);
         removeButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
