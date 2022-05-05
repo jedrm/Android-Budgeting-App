@@ -1,14 +1,16 @@
-package com.example.budgetingapp;
+package com.example.budgetingapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Activity2 extends AppCompatActivity {
+import com.example.budgetingapp.R;
+
+public class Activity3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity2);
+        setContentView(R.layout.activity3);
     }
 }

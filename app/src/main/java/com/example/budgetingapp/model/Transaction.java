@@ -65,4 +65,14 @@ public class Transaction {
     public int hashCode() {
         return Objects.hash(date, amount, merchantName, transactionType);
     }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "date='" + date + '\'' +
+                ", amount=" + amount +
+                ", merchantName='" + merchantName + '\'' +
+                ", transactionType=" + transactionType +
+                '}';
+    }
 }
