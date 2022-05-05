@@ -7,11 +7,16 @@
         <entry key="..\:/Users/Tah/Documents/College/Spring 2022/CSC 221/Final Project/Android-Budgeting-App/app/src/main/res/layout/activity2.xml" value="0.25" />
         <entry key="..\:/Users/Tah/Documents/College/Spring 2022/CSC 221/Final Project/Android-Budgeting-App/app/src/main/res/layout/activity3.xml" value="0.25" />
         <entry key="..\:/Users/Tah/Documents/College/Spring 2022/CSC 221/Final Project/Android-Budgeting-App/app/src/main/res/layout/activity4.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity1.xml" value="0.22752990722656252" />
+        <entry key="app/src/main/res/layout/activity2.xml" value="0.21967943716740262" />
+        <entry key="app/src/main/res/layout/activity3.xml" value="0.33401659537052764" />
+        <entry key="app/src/main/res/layout/activity4.xml" value="0.12952898550724637" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/activity_recent_transactions.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/activity_recent_transctions.xml" value="0.37395833333333334" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK" />
 </project>

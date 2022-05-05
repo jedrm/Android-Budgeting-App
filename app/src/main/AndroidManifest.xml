@@ -18,6 +18,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.Activity2"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTIVITY2" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.Activity3"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTIVITY3" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.Activity4"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTIVITY4" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
