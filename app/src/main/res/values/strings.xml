@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Budgeting App</string>
+    <string name="statistics">Statistics</string>
+    <string name="expand">Expand</string>
+    <string name="recent_transactions">Recent Transactions</string>
 </resources>
