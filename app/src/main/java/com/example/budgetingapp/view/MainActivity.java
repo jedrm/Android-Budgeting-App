@@ -11,6 +11,8 @@ import com.example.budgetingapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    // TODO: (@Front-End) Create splash screen effect (?)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

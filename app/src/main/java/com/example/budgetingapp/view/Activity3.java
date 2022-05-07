@@ -11,6 +11,8 @@ import com.example.budgetingapp.R;
 
 public class Activity3 extends AppCompatActivity {
 
+    // TODO: (@Front-End) Fix activity so transactions can actually be stored
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

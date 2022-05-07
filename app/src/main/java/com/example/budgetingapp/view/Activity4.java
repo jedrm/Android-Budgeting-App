@@ -19,6 +19,7 @@ public class Activity4 extends AppCompatActivity {
         getSupportActionBar().hide();
         Button doneButton = (Button) findViewById(R.id.doneButton);
         doneButton.setOnClickListener(new View.OnClickListener(){
+            // TODO: Establish functionality to add transaction to list
             public void onClick(View v){
                 startActivity(new Intent(Activity4.this, MainActivity.class));
             }
