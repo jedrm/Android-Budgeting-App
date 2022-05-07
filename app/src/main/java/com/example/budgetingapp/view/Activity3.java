@@ -37,13 +37,13 @@ public class Activity3 extends AppCompatActivity {
         });
     }
 
-    // TODO: (@Front-End) Revise method
     public void addNum(View v) {
         String amount = ((TextView) findViewById(R.id.moneyAmount)).getText().toString();
         // double amount_double = Double.parseDouble(amount.substring(1));
         String num = ((Button) v).getText().toString();
         // Log.d("number value", num);
 
+        /*
         if(amount.charAt(1) == '0') {
             String newStr = "$" +
                     amount.charAt(3) +
@@ -60,6 +60,17 @@ public class Activity3 extends AppCompatActivity {
                     num;
             ((TextView) findViewById(R.id.moneyAmount)).setText(newStr);
         }
+        */
+
+        StringBuilder sb = new StringBuilder();
+        sb.append('$');
+        if(amount.charAt(1) != '0') sb.append(amount.substring(1, amount.indexOf('.')));
+        sb.append(amount.charAt(amount.indexOf('.') + 1));
+        sb.append('.');
+        sb.append(amount.charAt(amount.length() - 1));
+        sb.append(num);
+        ((TextView) findViewById(R.id.moneyAmount)).setText(sb.toString());
+
     }
 
 }
