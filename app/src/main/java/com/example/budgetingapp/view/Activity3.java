@@ -14,6 +14,7 @@ import com.example.budgetingapp.R;
 public class Activity3 extends AppCompatActivity {
 
     // TODO: (@Front-End) Fix activity so transactions can actually be stored
+    // TODO: (@Front-End) Allow user to input transaction name and cycle
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class Activity3 extends AppCompatActivity {
         });
     }
 
-    // TODO: (@Front-End) Revise method.
+    // TODO: (@Front-End) Revise method
     public void addNum(View v) {
         String amount = ((TextView) findViewById(R.id.moneyAmount)).getText().toString();
         // double amount_double = Double.parseDouble(amount.substring(1));
