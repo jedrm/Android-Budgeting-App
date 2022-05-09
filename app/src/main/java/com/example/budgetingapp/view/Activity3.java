@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.budgetingapp.R;
 
 public class Activity3 extends AppCompatActivity {
@@ -20,7 +19,7 @@ public class Activity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity3);
-        // Log.d("current amount", ((TextView) findViewById(R.id.moneyAmount)).getText().toString());
+
         getSupportActionBar().hide();
         Button removeButton = (Button) findViewById(R.id.removeButton);
         removeButton.setOnClickListener(new View.OnClickListener(){
@@ -46,6 +45,7 @@ public class Activity3 extends AppCompatActivity {
         });
     }
 
+    // TODO: Add transaction limit
     public void addNum(View v) {
 
         // Toast.makeText(Activity3.this, "Number pressed!", Toast.LENGTH_LONG).show();

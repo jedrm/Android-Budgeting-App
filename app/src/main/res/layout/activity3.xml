@@ -171,14 +171,15 @@
             android:id="@+id/textBox"
             android:layout_width="258dp"
             android:layout_height="49dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="Enter transaction name"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            android:textColorHint="#757575"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/moneyAmount"
-            app:layout_constraintVertical_bias="0.261" />
+            app:layout_constraintTop_toBottomOf="@+id/moneyAmount" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
