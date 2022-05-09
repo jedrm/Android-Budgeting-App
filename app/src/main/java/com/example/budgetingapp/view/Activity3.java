@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.budgetingapp.R;
 
@@ -34,10 +35,20 @@ public class Activity3 extends AppCompatActivity {
                 startActivity(new Intent(Activity3.this, Activity2.class));
             }
         });
+
+        Button doneButton = (Button) findViewById(R.id.doneButton);
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
+                // TODO: Pass in information input by user to be displayed in activity 2
+                startActivity(new Intent(Activity3.this, Activity2.class));
+            }
+        });
     }
 
     public void addNum(View v) {
 
+        // Toast.makeText(Activity3.this, "Number pressed!", Toast.LENGTH_LONG).show();
         String amount = ((TextView) findViewById(R.id.moneyAmount)).getText().toString();
         String num = ((Button) v).getText().toString();
         StringBuilder sb = new StringBuilder();
