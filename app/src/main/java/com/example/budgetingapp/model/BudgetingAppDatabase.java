@@ -6,6 +6,10 @@ import androidx.room.*;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+/*
+Database class
+    - Creates the database
+ */
 @Database(entities = {Transaction.class}, version=1)
 @TypeConverters({Converters.class})
 public abstract class BudgetingAppDatabase extends RoomDatabase {

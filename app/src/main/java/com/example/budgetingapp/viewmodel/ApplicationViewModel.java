@@ -7,6 +7,9 @@ import android.content.Context;
 
 import java.util.List;
 
+/*
+Create a view model instance and use these methods to work with the database
+ */
 public class ApplicationViewModel {
     public void insertToDatabase(Transaction transaction, Context context) {
         BudgetingAppDatabase.getInstance(context.getApplicationContext())

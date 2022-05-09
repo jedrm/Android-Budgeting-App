@@ -4,6 +4,10 @@ import androidx.room.*;
 
 import java.util.List;
 
+/*
+Data Access Object Class
+    - Queries for the database are inside this class
+ */
 @Dao
 public interface TransactionDao {
     @Insert

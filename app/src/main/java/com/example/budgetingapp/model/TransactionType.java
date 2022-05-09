@@ -1,5 +1,8 @@
 package com.example.budgetingapp.model;
 
+/*
+Enum for the different categories of transactions
+ */
 public enum TransactionType {
     Income,
     Entertainment,

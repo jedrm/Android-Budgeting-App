@@ -6,6 +6,9 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+/*
+Create a transaction object when dealing with transactions
+ */
 @Entity(tableName = "transactions")
 @TypeConverters(Converters.class)
 public class Transaction {
