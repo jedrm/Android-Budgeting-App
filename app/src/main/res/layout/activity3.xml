@@ -6,25 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".view.Activity3">
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="344dp"
-        android:layout_height="619dp"
+        android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687">
+        app:layout_constraintVertical_bias="0.877">
 
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/gridLayout"
@@ -163,7 +154,7 @@
             android:layout_height="49dp"
             android:layout_marginTop="24dp"
             android:ems="10"
-            android:hint="Enter transaction name"
+            android:hint="@string/enter_transaction_name"
             android:inputType="textPersonName"
             android:textColorHint="#757575"
             app:layout_constraintEnd_toEndOf="parent"
@@ -171,5 +162,21 @@
             app:layout_constraintTop_toBottomOf="@+id/moneyAmount" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/back_button_bg"
+        android:contentDescription="@string/back"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906"
+        app:srcCompat="@drawable/ic_launcher_longback_foreground"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

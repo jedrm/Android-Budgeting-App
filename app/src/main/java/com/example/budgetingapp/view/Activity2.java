@@ -32,7 +32,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
-        Button backButton = (Button) findViewById(R.id.backButton);
+        ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity(new Intent(Activity2.this, MainActivity.class));
