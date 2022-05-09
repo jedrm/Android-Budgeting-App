@@ -13,7 +13,7 @@ public abstract class BudgetingAppDatabase extends RoomDatabase {
 
     private static volatile BudgetingAppDatabase INSTANCE;
 
-    static BudgetingAppDatabase getInstance(Context context) {
+    public static BudgetingAppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (BudgetingAppDatabase.class) {
                 if (INSTANCE == null) {
