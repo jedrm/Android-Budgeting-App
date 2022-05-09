@@ -1,56 +1,72 @@
 package com.example.budgetingapp.model;
 
 import java.util.Objects;
+import java.util.Date;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
+@Entity(tableName = "transactions")
+@TypeConverters(Converters.class)
 public class Transaction {
-    private String date;
+
+    @PrimaryKey(autoGenerate = true)
+    private int transaction_id;
+
+    @TypeConverters({Converters.class})
+    private Date date;
+
     private int amount;
+
     private String merchantName;
-    private TransactionType transactionType;
 
-    public Transaction(int amount, String merchantName, TransactionType transactionType) {
-        this.amount = amount;
-        this.merchantName = merchantName;
-        this.transactionType = transactionType;
-    }
+    private String transactionType;
 
-    public Transaction(String date, int amount, String merchantName, TransactionType transactionType) {
+    public Transaction(Date date, int amount, String merchantName, String transactionType) {
         this.date = date;
         this.amount = amount;
         this.merchantName = merchantName;
         this.transactionType = transactionType;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public int getTransaction_id() {
+        return transaction_id;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setTransaction_id(int transaction_id) {
+        this.transaction_id = transaction_id;
     }
 
-    public void setMerchantName(String merchantName) {
-        this.merchantName = merchantName;
-    }
-
-    public void setTransactionType(TransactionType transactionType) {
-        this.transactionType = transactionType;
-    }
-
-    public String getDate() {
+    public Date getDate() {
         return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public int getAmount() {
         return amount;
     }
 
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
     public String getMerchantName() {
         return merchantName;
     }
 
-    public TransactionType getTransactionType() {
+    public void setMerchantName(String merchantName) {
+        this.merchantName = merchantName;
+    }
+
+    public String getTransactionType() {
         return transactionType;
+    }
+
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
     }
 
     @Override
@@ -58,21 +74,22 @@ public class Transaction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transaction that = (Transaction) o;
-        return amount == that.amount && date.equals(that.date) && merchantName.equals(that.merchantName) && transactionType == that.transactionType;
+        return transaction_id == that.transaction_id && amount == that.amount && date.equals(that.date) && merchantName.equals(that.merchantName) && transactionType.equals(that.transactionType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, amount, merchantName, transactionType);
+        return Objects.hash(transaction_id, date, amount, merchantName, transactionType);
     }
 
     @Override
     public String toString() {
         return "Transaction{" +
-                "date='" + date + '\'' +
+                "transaction_id=" + transaction_id +
+                ", date=" + date +
                 ", amount=" + amount +
                 ", merchantName='" + merchantName + '\'' +
-                ", transactionType=" + transactionType +
+                ", transactionType='" + transactionType + '\'' +
                 '}';
     }
 }
