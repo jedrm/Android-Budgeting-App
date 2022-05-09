@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.budgetingapp.R;
 
@@ -17,14 +18,21 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
         getSupportActionBar().hide();
-        Button addButton = (Button) findViewById(R.id.addButton);
+        ImageButton addButton = (ImageButton) findViewById(R.id.addButton);
         addButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity(new Intent(Activity2.this, Activity3.class));
             }
         });
 
-        Button backButton = (Button) findViewById(R.id.backButton);
+        ImageButton removeButton = (ImageButton) findViewById(R.id.removeButton);
+        removeButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(Activity2.this, Activity4.class));
+            }
+        });
+
+        ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity(new Intent(Activity2.this, MainActivity.class));
