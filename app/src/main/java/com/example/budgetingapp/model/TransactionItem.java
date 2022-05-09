@@ -3,7 +3,7 @@ package com.example.budgetingapp.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "transactions")
 public class TransactionItem {
     @PrimaryKey(autoGenerate = true)
     public int transaction_id;

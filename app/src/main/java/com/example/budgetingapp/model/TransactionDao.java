@@ -1,4 +1,4 @@
-package com.example.budgetingapp.model.dao;
+package com.example.budgetingapp.model;
 
 import androidx.room.*;
 
