@@ -26,4 +26,6 @@
     <string name="budgeting">Budgeting</string>
     <string name="csc22100">CSC22100</string>
     <string name="enter_transaction_name">Enter transaction name</string>
+    <string name="menu_prompt">Select a Transaction Type</string>
+    <string name="select_a_transaction_type">Select a Transaction Type</string>
 </resources>

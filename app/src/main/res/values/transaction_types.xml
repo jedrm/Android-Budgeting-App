@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="transaction_types">
+        <item></item>
+        <item>Income</item>
+        <item>Entertainment</item>
+        <item>Shopping</item>
+        <item>Health</item>
+        <item>Food</item>
+        <item>Investments</item>
+        <item>Transportation</item>
+        <item>Fees</item>
+        <item>Taxes</item>
+        <item>Miscellaneous</item>
+        <item>Education</item>
+        <item>Personal Care</item>
+        <item>Kids</item>
+        <item>Gifts</item>
+        <item>Bills</item>
+        <item>Travel</item>
+        <item>Business</item>
+
+    </string-array>
+</resources>

@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.budgetingapp.R;
 
-public class Activity3 extends AppCompatActivity {
+public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     // TODO: (@Front-End) Fix activity so transactions can actually be stored
     // TODO: (@Front-End) Allow user to input transaction name and cycle
@@ -30,14 +34,22 @@ public class Activity3 extends AppCompatActivity {
             }
         });
 
-        Button doneButton = (Button) findViewById(R.id.doneButton);
-        doneButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
-                // TODO: Pass in information input by user to be displayed in activity 2
-                startActivity(new Intent(Activity3.this, Activity2.class));
-            }
-        });
+
+        Spinner spinner = findViewById(R.id.transaction_menu);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.transaction_types, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+        String text = parent.getItemAtPosition(position).toString();
+        //Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
     }
 
     // TODO: Add transaction limit
@@ -76,5 +88,4 @@ public class Activity3 extends AppCompatActivity {
         ((TextView) findViewById(R.id.moneyAmount)).setText(sb.toString());
 
     }
-
 }

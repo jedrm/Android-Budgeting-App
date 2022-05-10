@@ -9,13 +9,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="344dp"
-        android:layout_height="600dp"
+        android:layout_height="619dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877">
+        app:layout_constraintVertical_bias="0.687">
 
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/gridLayout"
@@ -143,23 +143,39 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:text="@string/_0_00"
-            android:textSize="64sp"
+            android:textSize="70sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/textBox"
-            android:layout_width="258dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="@string/enter_transaction_name"
-            android:inputType="textPersonName"
-            android:textColorHint="#757575"
+        <Spinner
+            android:id="@+id/transaction_menu"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.989"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/moneyAmount" />
+            app:layout_constraintTop_toBottomOf="@+id/moneyAmount"
+            app:layout_constraintVertical_bias="0.597"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_a_transaction_type"
+            app:layout_constraintBottom_toTopOf="@+id/transaction_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/moneyAmount"
+            app:layout_constraintVertical_bias="0.784" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -168,15 +184,15 @@
         android:layout_width="85dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/back_button_bg"
         android:contentDescription="@string/back"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906"
         app:srcCompat="@drawable/ic_launcher_longback_foreground"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
