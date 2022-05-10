@@ -34,20 +34,26 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
             }
         });
 
-        Button doneButton = (Button) findViewById(R.id.doneButton);
-        doneButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
-                // TODO: Pass in information input by user to be displayed in activity 2
-                startActivity(new Intent(Activity3.this, Activity2.class));
-            }
-        });
-
         Spinner spinner = findViewById(R.id.transaction_menu);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.transaction_types, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        Button doneButton = (Button) findViewById(R.id.doneButton);
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                String choice = spinner.getSelectedItem().toString();
+                if (!choice.equals("")) {
+                    Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
+                    // TODO: Pass in information input by user to be displayed in activity 2
+                    startActivity(new Intent(Activity3.this, Activity2.class));
+                }
+                else {
+                    Toast.makeText(Activity3.this, "Select a transaction type!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
