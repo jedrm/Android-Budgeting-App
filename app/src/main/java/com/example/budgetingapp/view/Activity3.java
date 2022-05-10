@@ -43,7 +43,6 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
             }
         });
 
-
         Spinner spinner = findViewById(R.id.transaction_menu);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.transaction_types, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

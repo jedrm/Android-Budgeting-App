@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_back_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_back_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/ic_launcher_longback_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_minus_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_minus_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_plus_background.xml" value="0.1" />
