@@ -12,15 +12,15 @@ Create a view model instance and use these methods to work with the database
  */
 public class ApplicationViewModel {
     public void insertToDatabase(Transaction transaction, Context context) {
-        BudgetingAppDatabase.getInstance(context.getApplicationContext())
+        new Thread(() -> BudgetingAppDatabase.getInstance(context.getApplicationContext())
                 .transaction_dao()
-                .insertTransaction(transaction);
+                .insertTransaction(transaction)).start();
     }
 
     public void removeFromDatabase(Transaction transaction, Context context) {
-        BudgetingAppDatabase.getInstance(context.getApplicationContext())
+        new Thread(() -> BudgetingAppDatabase.getInstance(context.getApplicationContext())
                 .transaction_dao()
-                .deleteTransaction(transaction);
+                .deleteTransaction(transaction)).start();
     }
 
     public List<Transaction> getAllTransactions(Context context) {

@@ -14,11 +14,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.budgetingapp.R;
+import com.example.budgetingapp.viewmodel.ApplicationViewModel;
 
 public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     // TODO: (@Front-End) Fix activity so transactions can actually be stored
     // TODO: (@Front-End) Allow user to input transaction name and cycle
+    ApplicationViewModel viewModel = new ApplicationViewModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +102,5 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
 
         sb.reverse();
         ((TextView) findViewById(R.id.moneyAmount)).setText(sb.toString());
-
     }
 }

@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.budgetingapp.R;
+import com.example.budgetingapp.viewmodel.ApplicationViewModel;
 
 public class Activity2 extends AppCompatActivity {
+
+    ApplicationViewModel viewModel = new ApplicationViewModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
