@@ -12,6 +12,7 @@ import com.example.budgetingapp.model.Transaction;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Date;
 import java.util.List;
 
 public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> {
@@ -42,7 +43,9 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> 
         Double d = Double.valueOf(INT_amount);
         d = d/100;
         holder.amount.setText(String.valueOf(d));
-        //holder.date.setText(this.transactionList.get(position).getDate());
+        Date date = this.transactionList.get(position).getDate();
+        String s = date.toString();
+        holder.date.setText(s);
     }
 
     @Override
