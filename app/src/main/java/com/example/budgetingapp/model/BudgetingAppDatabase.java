@@ -23,6 +23,7 @@ public abstract class BudgetingAppDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             BudgetingAppDatabase.class, "transactions")
+                            .allowMainThreadQueries()
                             .build();
                 }
             }

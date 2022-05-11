@@ -28,6 +28,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/activity_recent_transactions.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/activity_recent_transctions.xml" value="0.37395833333333334" />
+        <entry key="app/src/main/res/layout/recycler_row.xml" value="0.14266304347826086" />
         <entry key="app/src/main/res/layout/rv_layout.xml" value="0.23859100341796877" />
         <entry key="app/src/main/res/layout/splash_activity.xml" value="0.19454803466796877" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2" />

@@ -126,7 +126,9 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
         String transaction_name = "DEFAULT";
         date = new Date();
         String s = (amount.getText().toString()).substring(1);
-        int transaction_amount = Double.valueOf(s).intValue();
+        double d = Double.valueOf(s);
+        d = d*100;
+        int transaction_amount = (int)d;
         if(!transaction_type.equals("") && transaction_amount > 0 && transaction_name != null) {
             Transaction transaction = new Transaction(date,transaction_amount,transaction_name,transaction_type);
             /*transaction.setTransactionType(transaction_type);

@@ -1,6 +1,10 @@
 package com.example.budgetingapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,12 +14,16 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.budgetingapp.R;
+import com.example.budgetingapp.model.Transaction;
 import com.example.budgetingapp.viewmodel.ApplicationViewModel;
+
+import java.util.List;
 
 public class Activity2 extends AppCompatActivity {
 
-    ApplicationViewModel viewModel = new ApplicationViewModel();
-
+    private ApplicationViewModel viewModel = new ApplicationViewModel();
+    private List<Transaction> transactionList;
+    private listAdapter listAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +49,23 @@ public class Activity2 extends AppCompatActivity {
                 startActivity(new Intent(Activity2.this, MainActivity.class));
             }
         });
-
+        initRecyclerView();
+        loadTransactions();
     }
+
+    private void initRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        listAdapter = new listAdapter(this);
+        recyclerView.setAdapter(listAdapter);
+    }
+
+
+    private void loadTransactions() {
+        transactionList = viewModel.getAllTransactions(this.getApplicationContext());
+        listAdapter.setTransactionList(transactionList);
+    }
+
 }
