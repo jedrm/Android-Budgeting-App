@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addToPieChart() {
-        chart.addPieSlice(new PieModel("Item 1", i1, Color.parseColor("#b7aeff")));
+        chart.addPieSlice(new PieModel("Item 1", i1, Color.parseColor("#a65fe0")));
         chart.addPieSlice(new PieModel("Item 2", i2, Color.parseColor("#de5460")));
         chart.addPieSlice(new PieModel("Item 3", i3, Color.parseColor("#06025e")));
         chart.addPieSlice(new PieModel("Item 4", i4, Color.parseColor("#65e1cf")));
