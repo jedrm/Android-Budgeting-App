@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,9 +29,10 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
     //private Transaction transaction;
     private Spinner spinner;
     private TextView amount;
-    private String name;
+    private EditText textName;
+    //private String name;
     private Date date;
-    //private TextView name;
+    private TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,9 +123,10 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
 
         spinner = findViewById(R.id.transaction_menu);
         amount = findViewById(R.id.moneyAmount);
+        textName = findViewById(R.id.transaction_name);
 
         String transaction_type = spinner.getSelectedItem().toString();
-        String transaction_name = "DEFAULT";
+        String transaction_name = textName.getText().toString();
         date = new Date();
         String s = (amount.getText().toString()).substring(1);
         double d = Double.valueOf(s);
@@ -131,13 +134,8 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
         int transaction_amount = (int)d;
         if(!transaction_type.equals("") && transaction_amount > 0 && transaction_name != null) {
             Transaction transaction = new Transaction(date,transaction_amount,transaction_name,transaction_type);
-            /*transaction.setTransactionType(transaction_type);
-            transaction.setAmount(transaction_amount);
-            transaction.setMerchantName(transaction_name);
-            transaction.setDate(date); */
             viewModel.insertToDatabase(transaction,getApplicationContext());
-            //BudgetingAppDatabase.getInstance(getApplicationContext()).transaction_dao().insertTransaction(transaction);
-            Toast.makeText(this,"DATA SAVED!",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"DATA SAVED!",Toast.LENGTH_SHORT).show();
         }
 
     }

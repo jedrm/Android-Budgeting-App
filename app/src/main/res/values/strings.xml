@@ -28,4 +28,5 @@
     <string name="enter_transaction_name">Enter transaction name</string>
     <string name="menu_prompt">Select a Transaction Type</string>
     <string name="select_a_transaction_type">Select a Transaction Type</string>
+    <string name="enter_transaction_name_">Enter Transaction Name:</string>
 </resources>
