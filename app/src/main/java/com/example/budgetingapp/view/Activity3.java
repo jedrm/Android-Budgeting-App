@@ -42,6 +42,7 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
 
         spinner = findViewById(R.id.transaction_menu);
         amount = findViewById(R.id.moneyAmount);
+        textName = findViewById(R.id.transaction_name);
 
         ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener(){
@@ -60,13 +61,24 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
             public void onClick(View view) {
                 saveData();
                 String choice = spinner.getSelectedItem().toString();
-                if (!choice.equals("")) {
+                String s = (amount.getText().toString()).substring(1);
+                double d = Double.valueOf(s);
+                d = d*100;
+                int transaction_amount = (int)d;
+                String transaction_name = textName.getText().toString();
+
+                if (!choice.equals("") && transaction_amount > 0 && transaction_name.length() > 0) {
                     //Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
-                    // TODO: Pass in information input by user to be displayed in activity 2
                     startActivity(new Intent(Activity3.this, Activity2.class));
                 }
-                else {
+                else if (transaction_amount == 0) {
+                    Toast.makeText(Activity3.this, "Enter a transaction amount!", Toast.LENGTH_SHORT).show();
+                }
+                else if (choice.equals("")) {
                     Toast.makeText(Activity3.this, "Select a transaction type!", Toast.LENGTH_SHORT).show();
+                }
+                else if (transaction_name.length() == 0) {
+                    Toast.makeText(Activity3.this, "Enter a transaction name!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
