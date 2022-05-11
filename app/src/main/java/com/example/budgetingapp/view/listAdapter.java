@@ -42,7 +42,13 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> 
         int INT_amount = this.transactionList.get(position).getAmount();
         Double d = Double.valueOf(INT_amount);
         d = d/100;
-        holder.amount.setText(String.valueOf(d));
+        String money = String.valueOf(d);
+        // check that our amount has two 0's following the decimal
+        if(money.charAt(money.length() -2) == '.') {
+            String m2 = money.concat("0");
+            holder.amount.setText(m2);
+        }
+        else {holder.amount.setText(money);}
         Date date = this.transactionList.get(position).getDate();
         String s = date.toString();
         holder.date.setText(s);

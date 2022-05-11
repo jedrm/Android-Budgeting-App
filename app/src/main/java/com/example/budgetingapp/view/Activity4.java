@@ -1,7 +1,9 @@
 package com.example.budgetingapp.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,6 +56,7 @@ public class Activity4 extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
+        new ItemTouchHelper(itemTouchHelperCallBack).attachToRecyclerView(recyclerView);
         listAdapter = new listAdapter(this);
         recyclerView.setAdapter(listAdapter);
     }
@@ -63,4 +66,18 @@ public class Activity4 extends AppCompatActivity {
         transactionList = viewModel.getAllTransactions(this.getApplicationContext());
         listAdapter.setTransactionList(transactionList);
     }
+
+    ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            viewModel.removeFromDatabase(transactionList.get(viewHolder.getAdapterPosition()),getApplicationContext());
+            transactionList.remove(viewHolder.getAdapterPosition());
+            listAdapter.notifyDataSetChanged();
+        }
+    };
 }
