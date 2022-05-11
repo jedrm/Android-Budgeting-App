@@ -59,7 +59,6 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
         Button doneButton = (Button) findViewById(R.id.doneButton);
         doneButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                saveData();
                 String choice = spinner.getSelectedItem().toString();
                 String s = (amount.getText().toString()).substring(1);
                 double d = Double.valueOf(s);
@@ -68,6 +67,7 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
                 String transaction_name = textName.getText().toString();
 
                 if (!choice.equals("") && transaction_amount > 0 && transaction_name.length() > 0) {
+                    saveData();
                     //Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Activity3.this, Activity2.class));
                 }
