@@ -10,18 +10,19 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="344dp"
         android:layout_height="619dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687">
+        app:layout_constraintVertical_bias="0.857">
 
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/gridLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="220dp"
             app:columnCount="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +152,7 @@
 
         <Spinner
             android:id="@+id/transaction_menu"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
             android:layout_marginTop="10dp"
@@ -160,9 +161,10 @@
             android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/gridLayout"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.717"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/moneyAmount"
-            app:layout_constraintVertical_bias="0.282"
+            app:layout_constraintVertical_bias="0.284"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
@@ -170,6 +172,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/select_a_transaction_type"
+            android:textStyle="bold"
+            android:textSize = "16sp"
             app:layout_constraintBottom_toTopOf="@+id/transaction_menu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
@@ -185,6 +189,7 @@
             android:inputType="text"
             android:text=""
             android:textSize="20sp"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/gridLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +201,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize = "16sp"
             android:text="@string/enter_transaction_name_"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/transaction_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -210,10 +217,9 @@
         android:layout_width="85dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/back_button_bg"
         android:contentDescription="@string/back"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_longback_foreground"
