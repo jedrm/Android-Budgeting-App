@@ -68,7 +68,7 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
 
                 if (!choice.equals("") && transaction_amount > 0 && transaction_name.length() > 0) {
                     saveData();
-                    //Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Activity3.this, "Transaction added!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Activity3.this, Activity2.class));
                 }
                 else if (transaction_amount == 0) {
