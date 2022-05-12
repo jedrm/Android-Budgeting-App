@@ -15,9 +15,13 @@ Our group has designed a budgeting app that organizes the user’s income and ex
 * Weekly Reminder: We don’t want the user to simply set everything up and look every month or two weeks or so. Therefore, reminders for regular review will allow users to see where most of their money goes and make any necessary changes as soon as possible. Regular review can also help someone see unnecessary expenses and remove things they barely use.
 
 ### Look and Feel
-We designed our app to look minimal and modern. Our activity layouts have a simple design so that the user can, at a glance, easily find the information they're looking for. The user interface was made to be responsive and intuitive for the user. There is a smooth and seamless navigation between the different pages and menus in our app. The application has multiple scenes for each of its features. The buttons are rounded rather than sharp as it looks more appealing to the users. (A mockup of our application is below.)
+We designed our app to look minimal and modern. Our activity layouts have a simple design so that the user can, at a glance, easily find the information they're looking for. The user interface was made to be responsive and intuitive for the user. There is a smooth and seamless navigation between the different pages and menus in our app. The application has multiple scenes for each of its features. The buttons are rounded rather than sharp as it looks more appealing to the users.
 
-![mockup](https://user-images.githubusercontent.com/65676639/166123738-a05eec33-3cf7-487a-b686-d9ba4b283fec.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/65676639/168132223-79b9cc43-61f9-4fe6-b4e2-d0af5287c3be.png" width="200">
+  <img src="https://user-images.githubusercontent.com/65676639/168132247-c229e1b3-c495-46c7-90d9-07fd5763cba1.png" width="200">
+  <img src="https://user-images.githubusercontent.com/65676639/168132263-07ebf05d-a387-4161-a2d6-a2439999b562.png" width="200">
+</p>
 
 ### Architecture
 Our group decided that we would need to store transactions and other important data (such as specific information about the transaction themselves) in an SQLite3 database. SQL is a technology that some of the group members are familiar with, so it was a great choice for storing the relevant data that we need. It’s also a bit more secure than a text or CSV file as you can’t easily access the data inside the file.
