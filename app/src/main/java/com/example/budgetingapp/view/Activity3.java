@@ -23,8 +23,6 @@ import com.example.budgetingapp.viewmodel.ApplicationViewModel;
 import java.util.Date;
 
 public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    // TODO: (@Front-End) Fix activity so transactions can actually be stored
-    // TODO: (@Front-End) Allow user to input transaction name and cycle
     private ApplicationViewModel viewModel = new ApplicationViewModel();
     //private Transaction transaction;
     private Spinner spinner;
