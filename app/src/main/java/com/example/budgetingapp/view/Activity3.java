@@ -94,12 +94,15 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
 
-    // TODO: Add transaction limit
     public void addNum(View v) {
 
-        // Toast.makeText(Activity3.this, "Number pressed!", Toast.LENGTH_LONG).show();
-
         String amount = ((TextView) findViewById(R.id.moneyAmount)).getText().toString();
+
+        if(amount.length() == 9) {
+            Toast.makeText(Activity3.this, "No more digits can be entered!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String num = ((Button) v).getText().toString();
         StringBuilder sb = new StringBuilder();
 
@@ -129,6 +132,7 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
 
         sb.reverse();
         ((TextView) findViewById(R.id.moneyAmount)).setText(sb.toString());
+
     }
 
     private void saveData() {
