@@ -20,6 +20,6 @@ public interface TransactionDao {
     List<Transaction> getTransactions();
 
     // TODO: A map of the existing categories and how many transactions
-    @Query("SELECT transactionType, COUNT(transaction_id) FROM transactions GROUP BY transactionType")
+    @Query("SELECT transactionType, COUNT(transaction_id) AS typeCount FROM transactions GROUP BY transactionType")
     List<TransactionCount> getCounts();
 }
