@@ -2,6 +2,7 @@ package com.example.budgetingapp.viewmodel;
 
 import com.example.budgetingapp.model.BudgetingAppDatabase;
 import com.example.budgetingapp.model.Transaction;
+import com.example.budgetingapp.model.TransactionCount;
 
 import android.content.Context;
 
@@ -27,5 +28,11 @@ public class ApplicationViewModel {
         return BudgetingAppDatabase.getInstance(context.getApplicationContext())
                 .transaction_dao()
                 .getTransactions();
+    }
+
+    public List<TransactionCount> getAllCount(Context context){
+        return BudgetingAppDatabase.getInstance(context.getApplicationContext())
+                .transaction_dao()
+                .getCounts();
     }
 }
