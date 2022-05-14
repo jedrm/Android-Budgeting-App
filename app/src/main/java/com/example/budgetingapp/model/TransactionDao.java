@@ -18,4 +18,8 @@ public interface TransactionDao {
 
     @Query("SELECT * FROM transactions ORDER BY date, transaction_id DESC")
     List<Transaction> getTransactions();
+
+    // TODO: A map of the existing categories and how many transactions
+    @Query("SELECT transactionType, COUNT(transaction_id) FROM transactions GROUP BY transactionType")
+    List<TransactionCount> getCounts();
 }
