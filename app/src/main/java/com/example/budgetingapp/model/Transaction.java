@@ -25,6 +25,15 @@ public class Transaction {
 
     private String transactionType;
 
+    /**
+     * Constructor for the Transaction instance
+     * The Transaction instance can be used to keep track of different transactions
+     * for the budgeting app
+     * @param date
+     * @param amount
+     * @param merchantName
+     * @param transactionType
+     */
     public Transaction(Date date, int amount, String merchantName, String transactionType) {
         this.date = date;
         this.amount = amount;
