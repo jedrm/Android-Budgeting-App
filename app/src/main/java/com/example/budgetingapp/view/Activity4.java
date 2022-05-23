@@ -19,6 +19,13 @@ import com.example.budgetingapp.viewmodel.ApplicationViewModel;
 
 import java.util.List;
 
+/**
+ * Class containing functionality for activity 4.
+ *
+ * FEATURES:
+ * - allows user to remove transactions with left/right swipes
+ * - connects to activity 2
+ */
 public class Activity4 extends AppCompatActivity {
 
     ApplicationViewModel viewModel = new ApplicationViewModel();

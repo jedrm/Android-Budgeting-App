@@ -21,6 +21,14 @@ import org.eazegraph.lib.models.PieModel;
 
 import java.util.List;
 
+/**
+ * Class containing functionality for activity 1 (home page).
+ *
+ * FEATURES:
+ * - pie chart used as visual representation of select transactions
+ * - short list of recent transactions
+ * - connects to activity 2
+ */
 public class MainActivity extends AppCompatActivity {
 
     ApplicationViewModel viewModel = new ApplicationViewModel();

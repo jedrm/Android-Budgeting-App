@@ -22,6 +22,14 @@ import com.example.budgetingapp.viewmodel.ApplicationViewModel;
 
 import java.util.Date;
 
+/**
+ * Class containing functionality for activity 3.
+ *
+ * FEATURES:
+ * - allows users to create new transactions by entering the amount, the name, and the type
+ * - input validation implemented
+ * - connects to activity 2
+ */
 public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private ApplicationViewModel viewModel = new ApplicationViewModel();
     //private Transaction transaction;

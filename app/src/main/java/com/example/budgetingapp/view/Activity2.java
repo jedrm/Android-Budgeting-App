@@ -19,6 +19,13 @@ import com.example.budgetingapp.viewmodel.ApplicationViewModel;
 
 import java.util.List;
 
+/**
+ * Class containing functionality for activity 2.
+ *
+ * FEATURES:
+ * - displays full list of stored transactions
+ * - connects to activity 1, 3, and 4
+ */
 public class Activity2 extends AppCompatActivity {
 
     private ApplicationViewModel viewModel = new ApplicationViewModel();

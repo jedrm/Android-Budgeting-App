@@ -15,6 +15,9 @@ import android.widget.TextView;
 
 import com.example.budgetingapp.R;
 
+/**
+ * Class containing functionality for splash screen.
+ */
 public class splashActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN_TIMEOUT = 2000;
 
