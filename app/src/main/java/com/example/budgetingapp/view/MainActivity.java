@@ -58,22 +58,22 @@ public class MainActivity extends AppCompatActivity {
     private void addToPieChart() {
         transactionCounts = viewModel.getAllCount(getApplicationContext());
 
-        // TODO: Create an array of colors of different colors
+        // Create an array of colors of different colors
         String[] colors = {
-                "#bf84f0", "#f3d034", "#cd9fb1", "#cd9fb1",
-                "#27703f", "#f0f672", "#2c6ae5", "#10c00a",
-                "#27dd80", "#52312f", "#5bb2c5", "#eeb8d2",
-                "#5c18d0", "#dc9232", "#440b10", "#cb4332",
-                "#782984"
+                "#5db3e6", "#34a96f", "#d6335b", "#b99fd1",
+                "#6338c8", "#f44e03", "#7c617e", "#58eb9d",
+                "#7edaf7", "#d29021", "#c0fd7d", "#ec1281",
+                "#b0b695", "#1760b5", "#f9f09c", "#baa13e",
+                "#445a9b"
         };
 
-        // TODO: Check if there is a summary of transaction counts
+        // Check if there is a summary of transaction counts
         if (transactionCounts.isEmpty()) {
             chart.startAnimation();
             return;
         }
 
-        // TODO: Loop through the list of transaction counts
+        // Loop through the list of transaction counts
         int index = 0;
         for (TransactionCount transactionCount: transactionCounts) {
             chart.addPieSlice(new PieModel(
