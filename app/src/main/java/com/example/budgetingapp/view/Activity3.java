@@ -32,13 +32,10 @@ import java.util.Date;
  */
 public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private ApplicationViewModel viewModel = new ApplicationViewModel();
-    //private Transaction transaction;
     private Spinner spinner;
     private TextView amount;
     private EditText textName;
-    //private String name;
     private Date date;
-    private TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +47,7 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
         amount = findViewById(R.id.moneyAmount);
         textName = findViewById(R.id.transaction_name);
 
+        // back button -> go back to activity 2
         ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -62,6 +60,7 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+        // done button -> save transaction data to the database, check for valid info
         Button doneButton = (Button) findViewById(R.id.doneButton);
         doneButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -93,7 +92,6 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
         String text = parent.getItemAtPosition(position).toString();
-        //Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -101,9 +99,7 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
     }
 
     public void addNum(View v) {
-
         String amount = ((TextView) findViewById(R.id.moneyAmount)).getText().toString();
-
         if(amount.length() == 9) {
             Toast.makeText(Activity3.this, "No more digits can be entered!", Toast.LENGTH_SHORT).show();
             return;
@@ -141,8 +137,8 @@ public class Activity3 extends AppCompatActivity implements AdapterView.OnItemSe
 
     }
 
+    // save data to database
     private void saveData() {
-
         spinner = findViewById(R.id.transaction_menu);
         amount = findViewById(R.id.moneyAmount);
         textName = findViewById(R.id.transaction_name);

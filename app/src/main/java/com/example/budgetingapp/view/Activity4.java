@@ -37,14 +37,8 @@ public class Activity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity4);
         getSupportActionBar().hide();
-        /*Button doneButton = (Button) findViewById(R.id.doneButton);
-        doneButton.setOnClickListener(new View.OnClickListener(){
-            // TODO: Establish functionality to add transaction to list
-            public void onClick(View v){
-                startActivity(new Intent(Activity4.this, MainActivity.class));
-            }
-        }); */
 
+        // back button -> go back to activity 2
         ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -55,6 +49,7 @@ public class Activity4 extends AppCompatActivity {
         loadTransactions();
     }
 
+    // initialize the recycler view for transaction list
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -68,12 +63,13 @@ public class Activity4 extends AppCompatActivity {
         recyclerView.setAdapter(listAdapter);
     }
 
-
+    // get the transactions from the database to display in the recycler view
     private void loadTransactions() {
         transactionList = viewModel.getAllTransactions(this.getApplicationContext());
         listAdapter.setTransactionList(transactionList);
     }
 
+    // functionality for transaction list items to be swiped and deleted
     ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {

@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         chart.startAnimation();
     }
 
+    // initialize the recycler view for transaction list
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(listAdapter);
     }
 
-
+    // get the transactions from the database to display in the recycler view
     private void loadTransactions() {
         transactionList = viewModel.getAllTransactions(this.getApplicationContext());
         listAdapter.setTransactionList(transactionList);

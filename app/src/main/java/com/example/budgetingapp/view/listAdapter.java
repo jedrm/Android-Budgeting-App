@@ -15,6 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Class containing functionality for activity 1 (home page).
+ *
+ * FEATURES:
+ * - sets up the display for transaction lists
+ */
+
 public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> {
 
     private Context context;
@@ -31,7 +38,7 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.MyViewHolder> 
     @NonNull
     @Override
     public listAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recycler_row_del,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.recycler_row,parent,false);
         return new MyViewHolder(view);
     }
 

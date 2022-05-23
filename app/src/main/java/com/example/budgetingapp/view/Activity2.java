@@ -36,6 +36,7 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
         getSupportActionBar().hide();
+        // button for adding transactions -> go to activity 3
         ImageButton addButton = (ImageButton) findViewById(R.id.addButton);
         addButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -43,6 +44,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
+        // button for removing transactions -> go to activity 4
         ImageButton removeButton = (ImageButton) findViewById(R.id.removeButton);
         removeButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -50,6 +52,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
+        // back button -> go back to activity 2
         ImageButton backButton = (ImageButton) findViewById(R.id.back_button);
         backButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -60,6 +63,7 @@ public class Activity2 extends AppCompatActivity {
         loadTransactions();
     }
 
+    // initialize the recycler view for transaction list
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -72,7 +76,7 @@ public class Activity2 extends AppCompatActivity {
         recyclerView.setAdapter(listAdapter);
     }
 
-
+    // get the transactions from the database to display in the recycler view
     private void loadTransactions() {
         transactionList = viewModel.getAllTransactions(this.getApplicationContext());
         listAdapter.setTransactionList(transactionList);
