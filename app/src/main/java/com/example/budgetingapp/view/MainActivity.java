@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.example.budgetingapp.R;
 import com.example.budgetingapp.model.Transaction;
+import com.example.budgetingapp.model.TransactionCount;
 import com.example.budgetingapp.viewmodel.ApplicationViewModel;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -24,12 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     ApplicationViewModel viewModel = new ApplicationViewModel();
     private List<Transaction> transactionList;
+    private List<TransactionCount> transactionCounts;
     private listAdapter listAdapter;
     private PieChart chart;
-    private int i1 = 15;
-    private int i2 = 25;
-    private int i3 = 35;
-    private int i4 = 45;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +48,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addToPieChart() {
-        chart.addPieSlice(new PieModel("Item 1", i1, Color.parseColor("#a65fe0")));
-        chart.addPieSlice(new PieModel("Item 2", i2, Color.parseColor("#de5460")));
-        chart.addPieSlice(new PieModel("Item 3", i3, Color.parseColor("#06025e")));
-        chart.addPieSlice(new PieModel("Item 4", i4, Color.parseColor("#65e1cf")));
+        transactionCounts = viewModel.getAllCount(getApplicationContext());
+
+        // TODO: Create an array of colors of different colors
+        String[] colors = {
+                "#bf84f0", "#f3d034", "#cd9fb1", "#cd9fb1",
+                "#27703f", "#f0f672", "#2c6ae5", "#10c00a",
+                "#27dd80", "#52312f", "#5bb2c5", "#eeb8d2",
+                "#5c18d0", "#dc9232", "#440b10", "#cb4332",
+                "#782984"
+        };
+
+        // TODO: Check if there is a summary of transaction counts
+        if (transactionCounts.isEmpty()) {
+            chart.startAnimation();
+            return;
+        }
+
+        // TODO: Loop through the list of transaction counts
+        int index = 0;
+        for (TransactionCount transactionCount: transactionCounts) {
+            chart.addPieSlice(new PieModel(
+                    transactionCount.getTransactionType(),
+                    transactionCount.getTypeCount(),
+                    Color.parseColor(colors[index++])
+            ));
+        }
+
         chart.startAnimation();
     }
 
