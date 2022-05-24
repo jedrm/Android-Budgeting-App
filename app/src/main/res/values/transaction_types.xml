@@ -2,7 +2,6 @@
 <resources>
     <string-array name="transaction_types">
         <item></item>
-        <item>Income</item>
         <item>Entertainment</item>
         <item>Shopping</item>
         <item>Health</item>
